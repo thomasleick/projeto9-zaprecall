@@ -1,15 +1,15 @@
-import styled from "styled-components";
-
-const Main = styled.main`
-font-family: 'Recursive', sans-serif, 'Righteous', cursive;
-`
+import Header from "./Header"
+import Main from "./Main"
+import Footer from "./Footer"
 
 const App = () => {
 
   return (
-    <Main>
-
-    </Main>
+    <>
+      <Header />
+      <Main />
+      <Footer />
+    </>
   );
 }
 
