@@ -1,15 +1,30 @@
 import Header from "./Header"
 import Main from "./Main"
 import Footer from "./Footer"
+import styled from "styled-components"
+
+const AppDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+`
+
+const ViewPort = styled.div`
+  border: 1px solid #DBDBDB;
+  max-width: 375px;
+`
 
 const App = () => {
 
   return (
-    <>
-      <Header />
-      <Main />
-      <Footer />
-    </>
+    <AppDiv>
+      <ViewPort>
+        <Header />
+        <Main />
+        <Footer />
+      </ViewPort>
+    </AppDiv>
   );
 }
 
