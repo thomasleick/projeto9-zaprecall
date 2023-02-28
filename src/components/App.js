@@ -3,6 +3,8 @@ import Main from "./Main"
 import Footer from "./Footer"
 import styled from "styled-components"
 import decks from '../decks';
+import { useState } from "react";
+import Welcome from "./Welcome";
 
 const AppDiv = styled.div`
   display: flex;
@@ -15,6 +17,7 @@ const AppDiv = styled.div`
 const ViewPort = styled.div`
   border: 1px solid #DBDBDB;
   width: 375px;
+  height: 100vh;
 
   @media(max-width: 375px) {
     width: 100vw;
@@ -23,12 +26,20 @@ const ViewPort = styled.div`
 
 const App = () => {
 
+  const [isStarted, setIsStarted] = useState(false)
+
   return (
     <AppDiv>
       <ViewPort>
-        <Header />
-        <Main decks={decks}/>
-        <Footer total={decks[0].cards.length}/>
+        {isStarted ? 
+          <>
+            <Header />
+            <Main decks={decks}/>
+            <Footer total={decks[0].cards.length}/>
+          </>
+        :
+        <Welcome setIsStarted={setIsStarted}/>
+      }
       </ViewPort>
     </AppDiv>
   );
