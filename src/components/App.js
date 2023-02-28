@@ -8,6 +8,7 @@ const AppDiv = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  font-family: 'Recursive', sans-serif, 'Righteous', cursive;
 `
 
 const ViewPort = styled.div`
