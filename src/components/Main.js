@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const MainDiv = styled.main`
-    min-height: 477px;
+    height: calc(100vh - 190px);
     background-color: #FB6B6B;
 `
 

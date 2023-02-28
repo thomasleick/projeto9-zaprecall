@@ -13,7 +13,11 @@ const AppDiv = styled.div`
 
 const ViewPort = styled.div`
   border: 1px solid #DBDBDB;
-  max-width: 375px;
+  width: 375px;
+
+  @media(max-width: 375px) {
+    width: 100vw;
+  }
 `
 
 const App = () => {

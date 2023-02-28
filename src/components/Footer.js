@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const FooterDiv = styled.footer`
     height: 70px;
-    width: 375px;
+    width: 100%;
     box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
     display: flex;
     justify-content: center;
