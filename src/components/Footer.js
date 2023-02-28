@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 
 const FooterDiv = styled.footer`
-    height: 70px;
+    height: 57.5px;
     width: 100%;
     box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
     display: flex;
@@ -20,10 +20,13 @@ const H1 = styled.h1`
 `
 
 
-const Footer = () => {
+const Footer = (props) => {
+
+    const { total } = props;
+
     return (
         <FooterDiv>
-            <H1>0/4 CONCLUÍDOS</H1>
+            <H1>0/{total} CONCLUÍDOS</H1>
         </FooterDiv>
     );
 };

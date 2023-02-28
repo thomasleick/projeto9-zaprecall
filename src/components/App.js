@@ -2,6 +2,7 @@ import Header from "./Header"
 import Main from "./Main"
 import Footer from "./Footer"
 import styled from "styled-components"
+import decks from '../decks';
 
 const AppDiv = styled.div`
   display: flex;
@@ -26,8 +27,8 @@ const App = () => {
     <AppDiv>
       <ViewPort>
         <Header />
-        <Main />
-        <Footer />
+        <Main decks={decks}/>
+        <Footer total={decks[0].cards.length}/>
       </ViewPort>
     </AppDiv>
   );
