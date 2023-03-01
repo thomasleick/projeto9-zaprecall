@@ -10,6 +10,7 @@ const MainDiv = styled.main`
     align-items: center;
     justify-content: space-between;
     overflow: hidden;
+    border: 0;
 `
 
 const Main = (props) => {

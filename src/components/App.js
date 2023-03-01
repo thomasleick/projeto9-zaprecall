@@ -93,7 +93,7 @@ const App = () => {
           unmountOnExit
           onExited={() => setIsMounted(true)}
         >
-          <AnimatedWelcome ref={welcomeRef}>
+          <AnimatedWelcome>
             <Welcome setIsStarted={setIsStarted} />
           </AnimatedWelcome>
         </CSSTransition>
@@ -104,7 +104,7 @@ const App = () => {
           mountOnEnter
           unmountOnExit
         >
-          <AnimatedWelcome ref={mainRef}>
+          <AnimatedWelcome>
             <Header />
             <Main decks={decks} />
             <Footer total={decks[0].cards.length} />
