@@ -1,7 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const Card = styled.div`
+const CardClosed = styled.div`
+    width: 270px;
+    height: 65px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    margin: 12.5px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    
+    @media (max-width: 330px) {
+        width: calc(100vw - 60px)
+    }
+`
+const CardOpened = styled.div`
     width: 270px;
     height: 65px;
     background: #FFFFFF;
@@ -36,12 +53,21 @@ const Img = styled.img`
 const Flashcard = (props) => {
 
     const { card, number } = props
+    const [isOpen, setIsOpen] = useState(false)
+
+    const openQuestion = () => {
+        setIsOpen(true)
+        console.log(card)
+    }
 
     return (
-        <Card>
-            <H1>Pergunta {number + 1}</H1>
-            <Img src="./assets/seta_play.png"></Img>
-        </Card>
+        !isOpen ?
+            <CardClosed>
+                <H1>Pergunta {number + 1}</H1>
+                <Img src="./assets/seta_play.png" alt="Abrir pergunta" onClick={openQuestion}></Img>
+            </CardClosed>
+        :
+            <CardOpened></CardOpened>
     );
 };
 

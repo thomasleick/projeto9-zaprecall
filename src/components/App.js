@@ -1,10 +1,10 @@
 import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
-import styled, { keyframes } from "styled-components";
 import decks from "../decks";
-import { useState } from "react";
 import Welcome from "./Welcome";
+import styled, { keyframes } from "styled-components";
+import { useState, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
 
 const AppDiv = styled.div`
@@ -80,29 +80,31 @@ const AnimatedWelcome = styled.div`
 const App = () => {
   const [isStarted, setIsStarted] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+  const welcomeRef = useRef(null);
+  const mainRef = useRef(null);
 
   return (
     <AppDiv>
       <ViewPort>
-        <CSSTransition
+        <CSSTransition  ref={welcomeRef}
           in={!isStarted}
           classNames="fade"
           timeout={500}
           unmountOnExit
           onExited={() => setIsMounted(true)}
         >
-          <AnimatedWelcome>
+          <AnimatedWelcome ref={welcomeRef}>
             <Welcome setIsStarted={setIsStarted} />
           </AnimatedWelcome>
         </CSSTransition>
-        <CSSTransition
+        <CSSTransition ref={mainRef}
           in={isStarted && isMounted}
           classNames="fade"
           timeout={500}
           mountOnEnter
           unmountOnExit
         >
-          <AnimatedWelcome>
+          <AnimatedWelcome ref={mainRef}>
             <Header />
             <Main decks={decks} />
             <Footer total={decks[0].cards.length} />
