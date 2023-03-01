@@ -13,14 +13,15 @@ const AppDiv = styled.div`
   justify-content: space-between;
   align-items: center;
   font-family: "Recursive", sans-serif, "Righteous", cursive;
+  height: 100vh;
 `;
 
 const ViewPort = styled.div`
   border: 1px solid #dbdbdb;
   width: 375px;
-  height: 100vh;
+  height: 100%;
 
-  @media (max-width: 375px) {
+  @media (max-width: 768px)  {
     width: 100vw;
   }
 `;

@@ -13,6 +13,10 @@ const Card = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 15px;
+    
+    @media (max-width: 330px) {
+        width: calc(100vw - 60px)
+    }
 `
 
 const H1 = styled.h1`
