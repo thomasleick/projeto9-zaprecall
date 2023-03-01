@@ -78,6 +78,7 @@ const AnimatedWelcome = styled.div`
 
 const App = () => {
   const [isStarted, setIsStarted] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   return (
     <AppDiv>
@@ -87,18 +88,25 @@ const App = () => {
           classNames="fade"
           timeout={500}
           unmountOnExit
+          onExited={() => setIsMounted(true)}
         >
           <AnimatedWelcome>
             <Welcome setIsStarted={setIsStarted} />
           </AnimatedWelcome>
         </CSSTransition>
-        {isStarted && (
-          <>
+        <CSSTransition
+          in={isStarted && isMounted}
+          classNames="fade"
+          timeout={500}
+          mountOnEnter
+          unmountOnExit
+        >
+          <AnimatedWelcome>
             <Header />
             <Main decks={decks} />
             <Footer total={decks[0].cards.length} />
-          </>
-        )}
+          </AnimatedWelcome>
+        </CSSTransition>
       </ViewPort>
     </AppDiv>
   );
