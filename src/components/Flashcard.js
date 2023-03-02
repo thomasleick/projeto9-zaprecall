@@ -26,6 +26,7 @@ const CardOpened = styled.div`
     width: 270px;
     min-height: 101px;
     max-height: 101px;
+    resize: none;
     background: #FFFFD4;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
