@@ -81,7 +81,7 @@ const App = () => {
   const [isStarted, setIsStarted] = useState(false)
   const [isMounted, setIsMounted] = useState(false)
   const [answersCount, setAnswersCount] = useState(0)
-  const [answers, setAnswers] = useState(Array(decks[0].cards.length).fill(0))
+  const [answers, setAnswers] = useState([])
   const welcomeRef = useRef(null)
   const mainRef = useRef(null)
 

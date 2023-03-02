@@ -150,7 +150,7 @@ const Flashcard = (props) => {
         setAnswersCount(newAnswersCount)
 
         const newAnswers = [...answers]
-        newAnswers[number] = arg
+        newAnswers.push(arg)
         setAnswers(newAnswers)
     }
 
