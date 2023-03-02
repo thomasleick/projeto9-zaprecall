@@ -57,7 +57,7 @@ const Welcome = (props) => {
         <Div>
             <Img src="./assets/logo.png"></Img>
             <H1>ZapRecall</H1>
-            <Button onClick={() => setIsStarted(true)}>Iniciar ReCall!</Button>
+            <Button onClick={() => setIsStarted(true)} data-test="start-btn">Iniciar ReCall!</Button>
         </Div>
     );
 };
