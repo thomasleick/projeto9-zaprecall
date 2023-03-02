@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React, { useState } from 'react'
+import styled from 'styled-components'
+import ReactCardFlip from 'react-card-flip'
 
 const CardClosed = styled.div`
     width: 270px;
@@ -130,7 +131,7 @@ const Flashcard = (props) => {
 
     const { card, number, answersCount, setAnswersCount, answers, setAnswers, propsButton } = props
     const [isOpen, setIsOpen] = useState(false)
-    const [isFlipped, setIsFlipped] = useState(false)
+    const [flipped, setFlipped] = useState(false)
     const [answer, setAnswer] = useState(0)
 
     const openQuestion = () => {
@@ -138,7 +139,7 @@ const Flashcard = (props) => {
     }
 
     const flipCard = () => {
-        setIsFlipped(true)
+        setFlipped(true)
     }
 
     const handleClickAnswer = (arg) => {
@@ -155,7 +156,7 @@ const Flashcard = (props) => {
 
     return (
         !isOpen ?
-            ( <CardClosed data-test="flashcard">
+            <CardClosed data-test="flashcard">
                 <H1 answer={answer} data-test="flashcard-text">Pergunta {number + 1}</H1>
                 <Play 
                     src={propsButton[answer].src} 
@@ -163,20 +164,21 @@ const Flashcard = (props) => {
                     data-test={propsButton[answer].dataTest}
                     onClick={!answer ? openQuestion : undefined }>
                 </Play>
-            </CardClosed> )
+            </CardClosed> 
         :
-            !isFlipped ? 
-                ( <CardOpened data-test="flashcard">
+            <ReactCardFlip isFlipped={flipped} flipDirection="horizontal" >
+                <CardOpened data-test="flashcard">
                     <Text data-test="flashcard-text">{card.question}</Text>
                     <Turn src="./assets/seta_virar.png" onClick={flipCard} data-test="turn-btn"></Turn>
-                </CardOpened> )
-            :
-                ( <CardOpened data-test="flashcard">
+                </CardOpened>
+                <CardOpened data-test="flashcard">
                     <Text data-test="flashcard-text">{card.answer}</Text>
                     <Wrong onClick={() => handleClickAnswer(1)} data-test="no-btn">Não Lembrei</Wrong>
                     <Almost onClick={() => handleClickAnswer(2)} data-test="partial-btn">Quase não lembrei</Almost>
                     <Zap onClick={() => handleClickAnswer(3)} data-test="zap-btn">Zap!</Zap>
-                </CardOpened> )
+                </CardOpened>
+            </ReactCardFlip>
+        
     );
 };
 
