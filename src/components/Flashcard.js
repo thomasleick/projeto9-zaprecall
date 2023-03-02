@@ -42,7 +42,18 @@ const H1 = styled.h1`
     font-weight: 700;
     font-size: 16px;
     line-height: 19px;
-    color: #333333;
+    color: ${props => {
+        if (!props.answer)
+            return "#333333"
+        if (props.answer === 1)
+            return "#FF3030"
+        if (props.answer === 2)
+            return "#FF922E"
+        if (props.answer === 3)
+            return "#2FBE34"
+        return "black"
+    }};
+    text-decoration: ${props => !props.answer ? "none" : "line-through"}
 `
 
 const Play = styled.img`
@@ -58,7 +69,7 @@ const Turn = styled.img`
     color: #333333;
 `
 
-const Question = styled.h1`
+const Text = styled.h1`
     font-family: 'Recursive';
     font-style: normal;
     font-weight: 400;
@@ -67,35 +78,100 @@ const Question = styled.h1`
     color: #333333;
 `
 
+const Wrong = styled.button`
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 85.17px;
+    height: 37.17px;
+    background: #FF3030;
+    border-radius: 5px;
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: #FFFFFF;
+`
+const Almost = styled.button`
+    position: absolute;
+    bottom: 10px;
+    left: calc(50% - 42.585px);
+    width: 85.17px;
+    height: 37.17px;
+    background: #FF922E;
+    border-radius: 5px;
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: #FFFFFF;
+`
+
+const Zap = styled.button`
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 85.17px;
+    height: 37.17px;
+    background: #2FBE34;
+    border-radius: 5px;
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: #FFFFFF;
+`
+
+
 const Flashcard = (props) => {
 
     const { card, number } = props
     const [isOpen, setIsOpen] = useState(false)
     const [isFlipped, setIsFlipped] = useState(false)
+    const [answer, setAnswer] = useState(0)
 
     const openQuestion = () => {
         setIsOpen(true)
-        console.log(card)
+    }
+
+    const flipCard = () => {
+        setIsFlipped(true)
+    }
+
+    const imgsButton = [
+        "./assets/seta_play.png",
+        "./assets/icone_erro.png",
+        "./assets/icone_quase.png",
+        "./assets/icone_certo.png"
+    ]
+
+    const handleClickAnswer = (arg) => {
+        setAnswer(arg)
+        setIsOpen(false)
     }
 
     return (
         !isOpen ?
-            <CardClosed>
-                <H1>Pergunta {number + 1}</H1>
-                <Play src="./assets/seta_play.png" alt="Abrir pergunta" onClick={openQuestion}></Play>
-            </CardClosed>
+            ( <CardClosed>
+                <H1 answer={answer}>Pergunta {number + 1}</H1>
+                <Play src={imgsButton[answer]} alt="Abrir pergunta" onClick={!answer ? openQuestion : undefined }></Play>
+            </CardClosed> )
         :
             !isFlipped ? 
-                <CardOpened>
-                    <Question>{card.question}</Question>
-                    <Turn src="./assets/seta_virar.png"></Turn>
-                </CardOpened>
+                ( <CardOpened>
+                    <Text>{card.question}</Text>
+                    <Turn src="./assets/seta_virar.png" onClick={flipCard}></Turn>
+                </CardOpened> )
             :
-                <CardOpened>
-                    <h2>Teste 2</h2>
-                </CardOpened>
-                
-            
+                ( <CardOpened>
+                    <Text>{card.answer}</Text>
+                    <Wrong onClick={() => handleClickAnswer(1)}>Não Lembrei</Wrong>
+                    <Almost onClick={() => handleClickAnswer(2)}>Quase não lembrei</Almost>
+                    <Zap onClick={() => handleClickAnswer(3)}>Zap!</Zap>
+                </CardOpened> )
     );
 };
 
