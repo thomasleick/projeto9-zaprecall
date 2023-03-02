@@ -78,10 +78,11 @@ const AnimatedWelcome = styled.div`
 `;
 
 const App = () => {
-  const [isStarted, setIsStarted] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
-  const welcomeRef = useRef(null);
-  const mainRef = useRef(null);
+  const [isStarted, setIsStarted] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
+  const [answersCount, setAnswersCount] = useState(0)
+  const welcomeRef = useRef(null)
+  const mainRef = useRef(null)
 
   return (
     <AppDiv>
@@ -106,8 +107,8 @@ const App = () => {
         >
           <AnimatedWelcome>
             <Header />
-            <Main decks={decks} />
-            <Footer total={decks[0].cards.length} />
+            <Main decks={decks} answersCount={answersCount} setAnswersCount={setAnswersCount} />
+            <Footer answersCount={answersCount} total={decks[0].cards.length} />
           </AnimatedWelcome>
         </CSSTransition>
       </ViewPort>

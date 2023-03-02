@@ -22,11 +22,11 @@ const H1 = styled.h1`
 
 const Footer = (props) => {
 
-    const { total } = props;
+    const { answersCount, total } = props;
 
     return (
         <FooterDiv>
-            <H1>0/{total} CONCLUÍDOS</H1>
+            <H1>{answersCount}/{total} CONCLUÍDOS</H1>
         </FooterDiv>
     );
 };

@@ -128,7 +128,7 @@ const Zap = styled.button`
 
 const Flashcard = (props) => {
 
-    const { card, number } = props
+    const { card, number, answersCount, setAnswersCount } = props
     const [isOpen, setIsOpen] = useState(false)
     const [isFlipped, setIsFlipped] = useState(false)
     const [answer, setAnswer] = useState(0)
@@ -151,6 +151,8 @@ const Flashcard = (props) => {
     const handleClickAnswer = (arg) => {
         setAnswer(arg)
         setIsOpen(false)
+        const newAnswersCount = answersCount + 1
+        setAnswersCount(newAnswersCount)
     }
 
     return (
