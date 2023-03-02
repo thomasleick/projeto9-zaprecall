@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Flashcard from './Flashcard';
 
 const MainDiv = styled.main`
-    height: calc(100vh - 177.5px);
+    height: ${props => !props.finish ? "calc(100vh - 190px)" : "calc(100vh - 291px)"};
     background-color: #FB6B6B;
     display: flex;
     flex-direction: column;
@@ -14,10 +14,10 @@ const MainDiv = styled.main`
 `
 
 const Main = (props) => {
-    const { decks, answersCount, setAnswersCount, answers, setAnswers, propsButton } = props;
+    const { decks, answersCount, setAnswersCount, answers, setAnswers, propsButton, finish } = props;
 
     return (
-        <MainDiv>
+        <MainDiv finish={finish}>
         {decks[0].cards.map((card, id) => 
             <Flashcard 
                 key={id} 

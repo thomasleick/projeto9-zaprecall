@@ -82,6 +82,7 @@ const App = () => {
   const [isMounted, setIsMounted] = useState(false)
   const [answersCount, setAnswersCount] = useState(0)
   const [answers, setAnswers] = useState([])
+  const [finish, setFinish] = useState(false)
   const welcomeRef = useRef(null)
   const mainRef = useRef(null)
 
@@ -110,7 +111,10 @@ const App = () => {
         alt: "ZAP!",
         dataTest: "zap-icon"
     }
-]
+  ]
+
+  if ((answersCount === decks[0].cards.length) && !finish)
+    setFinish(true)
 
   return (
     <AppDiv>
@@ -135,8 +139,22 @@ const App = () => {
         >
           <AnimatedWelcome>
             <Header />
-            <Main decks={decks} answersCount={answersCount} setAnswersCount={setAnswersCount} answers={answers} setAnswers={setAnswers} propsButton={propsButton} />
-            <Footer answers={answers} answersCount={answersCount} total={decks[0].cards.length} propsButton={propsButton} />
+            <Main 
+              decks={decks} 
+              answersCount={answersCount} 
+              setAnswersCount={setAnswersCount} 
+              answers={answers} 
+              setAnswers={setAnswers} 
+              propsButton={propsButton} 
+              finish={finish}
+            />
+            <Footer 
+              answers={answers} 
+              answersCount={answersCount} 
+              total={decks[0].cards.length} 
+              propsButton={propsButton} 
+              finish={finish}
+            />
           </AnimatedWelcome>
         </CSSTransition>
       </ViewPort>
