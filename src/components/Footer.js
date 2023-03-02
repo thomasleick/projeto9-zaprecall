@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import Finished from './Finished';
 
-
 const FooterDiv = styled.footer`
     height: ${props => !props.finish ? "70px" : "171px"};
     width: 100%;
@@ -22,7 +21,8 @@ const H1 = styled.h1`
     margin-bottom: 6px;
 `
 const Span = styled.img`
-
+    width: 23px;
+    height: 23px;
 `
 
 const Footer = (props) => {

@@ -116,7 +116,6 @@ const App = () => {
   if ((answersCount === decks[0].cards.length) && !finish)
     setFinish(true)
 
-
   return (
     <AppDiv>
       <ViewPort>

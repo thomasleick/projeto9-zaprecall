@@ -26,7 +26,6 @@ const H1 = styled.h1`
     transform: rotate(0.58deg); 
 `
 
-
 const Header = () => {
     return (
         <HeaderDiv>

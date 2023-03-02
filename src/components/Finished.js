@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-
 const Div = styled.div`
     display: flex;
     justify-content: center;
@@ -55,7 +54,6 @@ const Finished = (props) => {
             src: "./assets/bg.svg",
             alt: "BG"
         }
-
 
     return (
         <div data-test="finish-text">

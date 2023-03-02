@@ -126,7 +126,6 @@ const Zap = styled.button`
     color: #FFFFFF;
 `
 
-
 const Flashcard = (props) => {
 
     const { card, number, answersCount, setAnswersCount, answers, setAnswers, propsButton } = props
