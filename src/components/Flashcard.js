@@ -3,7 +3,8 @@ import styled from 'styled-components';
 
 const CardClosed = styled.div`
     width: 270px;
-    height: 65px;
+    min-height: 35px;
+    max-height: 35px;
     resize: none;
     background: #FFFFFF;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
@@ -22,9 +23,9 @@ const CardClosed = styled.div`
 const CardOpened = styled.div`
     position: relative;
     width: 270px;
-    min-height: 131px;
-    max-height: 131px;
-    background: #FFFFD5;
+    min-height: 101px;
+    max-height: 101px;
+    background: #FFFFD4;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
     margin: 12.5px 0;
