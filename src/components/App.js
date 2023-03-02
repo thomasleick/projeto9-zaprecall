@@ -116,10 +116,11 @@ const App = () => {
   if ((answersCount === decks[0].cards.length) && !finish)
     setFinish(true)
 
+
   return (
     <AppDiv>
       <ViewPort>
-        <CSSTransition  ref={welcomeRef}
+        <CSSTransition  nodeRef={welcomeRef}
           in={!isStarted}
           classNames="fade"
           timeout={500}
@@ -130,7 +131,7 @@ const App = () => {
             <Welcome setIsStarted={setIsStarted} />
           </AnimatedWelcome>
         </CSSTransition>
-        <CSSTransition ref={mainRef}
+        <CSSTransition nodeRef={mainRef}
           in={isStarted && isMounted}
           classNames="fade"
           timeout={500}

@@ -2,18 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Div = styled.div`
-    width: 100%;
-    height: 100%;
-    background: #FB6B6B;
-    border-left: 1px solid #DBDBDB;
-    border-top: 1px solid #DBDBDB;
-    border-right: 1px solid #DBDBDB;
-    border-bottom: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-`
+  width: 100%;
+  height: 100%;
+  background: #FB6B6B;
+  border: 1px solid #DBDBDB;
+  border-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
 
 const Img = styled.img`
     width: 136px;
