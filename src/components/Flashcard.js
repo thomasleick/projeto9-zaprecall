@@ -199,7 +199,7 @@ const Flashcard = (props) => {
                     <Text data-test="flashcard-text">{card.answer}</Text>
                     <Wrong onClick={() => handleClickAnswer(1)} data-test="no-btn">Não Lembrei</Wrong>
                     <Almost onClick={() => handleClickAnswer(2)} data-test="partial-btn">Quase não lembrei</Almost>
-                    <Zap onClick={() => handleClickAnswer(3)}>Zap!</Zap>
+                    <Zap onClick={() => handleClickAnswer(3)} data-test="zap-btn">Zap!</Zap>
                 </CardOpened> )
     );
 };
