@@ -14,7 +14,8 @@ const MainDiv = styled.main`
 `
 
 const Main = (props) => {
-    const { decks, answersCount, setAnswersCount, answers, setAnswers } = props;
+    const { decks, answersCount, setAnswersCount, answers, setAnswers, propsButton } = props;
+
     return (
         <MainDiv>
         {decks[0].cards.map((card, id) => 
@@ -26,6 +27,7 @@ const Main = (props) => {
                 setAnswersCount={setAnswersCount}
                 answers={answers}
                 setAnswers={setAnswers}
+                propsButton={propsButton}
             />
 
         )}            

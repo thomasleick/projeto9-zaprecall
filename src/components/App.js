@@ -85,6 +85,33 @@ const App = () => {
   const welcomeRef = useRef(null)
   const mainRef = useRef(null)
 
+  const propsButton = [
+    { 
+        name: "Unanswered", 
+        src: "./assets/seta_play.png",
+        alt: "Abrir Pergunta",
+        dataTest: "play-btn"
+    },
+    { 
+        name: "", 
+        src: "./assets/icone_erro.png",
+        alt: "Errou",
+        dataTest: "no-icon"
+    },
+    { 
+        name: "", 
+        src: "./assets/icone_quase.png",
+        alt: "Quase",
+        dataTest: "partial-icon"
+    },
+    { 
+        name: "", 
+        src: "./assets/icone_certo.png",
+        alt: "ZAP!",
+        dataTest: "zap-icon"
+    }
+]
+
   return (
     <AppDiv>
       <ViewPort>
@@ -108,8 +135,8 @@ const App = () => {
         >
           <AnimatedWelcome>
             <Header />
-            <Main decks={decks} answersCount={answersCount} setAnswersCount={setAnswersCount} answers={answers} setAnswers={setAnswers} />
-            <Footer answers={answers} answersCount={answersCount} total={decks[0].cards.length} />
+            <Main decks={decks} answersCount={answersCount} setAnswersCount={setAnswersCount} answers={answers} setAnswers={setAnswers} propsButton={propsButton} />
+            <Footer answers={answers} answersCount={answersCount} total={decks[0].cards.length} propsButton={propsButton} />
           </AnimatedWelcome>
         </CSSTransition>
       </ViewPort>

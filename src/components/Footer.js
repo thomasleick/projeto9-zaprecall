@@ -23,23 +23,26 @@ const Span = styled.img`
 
 `
 
-
 const Footer = (props) => {
 
-    const { answers, answersCount, total } = props;
-
-    const icons = [
-        "",
-        "./assets/icone_erro.png",
-        "./assets/icone_quase.png",
-        "./assets/icone_certo.png"
-    ]
-
+    const { answers, answersCount, total, propsButton } = props;
 
     return (
         <FooterDiv data-test="footer">
             <H1>{answersCount}/{total} CONCLUÍDOS</H1>
-            <div>{answers.map((answer, pos) => !answer ? "" : <Span src={icons[answer]} key={`answer${pos}`}></Span>)}</div>
+            <div>{
+                answers.map((answer, pos) => 
+                    !answer ? 
+                        "" 
+                    : 
+                        <Span 
+                            src={propsButton[answer].src}
+                            alt={propsButton[answer].alt}
+                            data-test={propsButton[answer].dataTest}
+                            key={`answer${pos}`}>
+                        </Span>)
+                }
+            </div>
         </FooterDiv>
     );
 };

@@ -129,7 +129,7 @@ const Zap = styled.button`
 
 const Flashcard = (props) => {
 
-    const { card, number, answersCount, setAnswersCount, answers, setAnswers } = props
+    const { card, number, answersCount, setAnswersCount, answers, setAnswers, propsButton } = props
     const [isOpen, setIsOpen] = useState(false)
     const [isFlipped, setIsFlipped] = useState(false)
     const [answer, setAnswer] = useState(0)
@@ -141,34 +141,6 @@ const Flashcard = (props) => {
     const flipCard = () => {
         setIsFlipped(true)
     }
-
-    const propsButton = [
-        { 
-            name: "Unanswered", 
-            src: "./assets/seta_play.png",
-            alt: "Abrir Pergunta",
-            dataTest: "play-btn"
-        },
-        { 
-            name: "", 
-            src: "./assets/icone_erro.png",
-            alt: "Errou",
-            dataTest: "no-icon"
-        },
-        { 
-            name: "", 
-            src: "./assets/icone_quase.png",
-            alt: "Quase",
-            dataTest: "partial-icon"
-        },
-        { 
-            name: "", 
-            src: "./assets/icone_certo.png",
-            alt: "ZAP!",
-            dataTest: "zap-icon"
-        }
-    ]
-    
 
     const handleClickAnswer = (arg) => {
         setAnswer(arg)
