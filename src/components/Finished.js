@@ -58,7 +58,7 @@ const Finished = (props) => {
 
 
     return (
-        <>
+        <div data-test="finish-text">
             <Div direction="column">
                 <Div direction = "row">
                     <Img src={result.src} alt={result.src}/>
@@ -67,7 +67,7 @@ const Finished = (props) => {
                 <P>{result.p[0]}</P>
                 <P>{result.p[1]}</P>
             </Div>  
-        </>
+        </div>
     );
 };
 
