@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Div = styled.div`
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background: #FB6B6B;
   border: 1px solid #DBDBDB;
   border-bottom: 0;
