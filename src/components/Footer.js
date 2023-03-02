@@ -7,6 +7,7 @@ const FooterDiv = styled.footer`
     width: 100%;
     box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 `
@@ -18,15 +19,27 @@ const H1 = styled.h1`
     line-height: 22px;
     color: #333333;
 `
+const Span = styled.img`
+
+`
 
 
 const Footer = (props) => {
 
-    const { answersCount, total } = props;
+    const { answers, answersCount, total } = props;
+
+    const icons = [
+        "",
+        "./assets/icone_erro.png",
+        "./assets/icone_quase.png",
+        "./assets/icone_certo.png"
+    ]
+
 
     return (
         <FooterDiv data-test="footer">
             <H1>{answersCount}/{total} CONCLUÍDOS</H1>
+            <div>{answers.map((answer, pos) => !answer ? "" : <Span src={icons[answer]} key={`answer${pos}`}></Span>)}</div>
         </FooterDiv>
     );
 };

@@ -14,11 +14,19 @@ const MainDiv = styled.main`
 `
 
 const Main = (props) => {
-    const { decks, answersCount, setAnswersCount } = props;
+    const { decks, answersCount, setAnswersCount, answers, setAnswers } = props;
     return (
         <MainDiv>
         {decks[0].cards.map((card, id) => 
-            <Flashcard key={id} card={card} number={id} answersCount={answersCount} setAnswersCount={setAnswersCount}/>
+            <Flashcard 
+                key={id} 
+                card={card} 
+                number={id} 
+                answersCount={answersCount} 
+                setAnswersCount={setAnswersCount}
+                answers={answers}
+                setAnswers={setAnswers}
+            />
 
         )}            
         </MainDiv>

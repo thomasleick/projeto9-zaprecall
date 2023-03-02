@@ -81,6 +81,7 @@ const App = () => {
   const [isStarted, setIsStarted] = useState(false)
   const [isMounted, setIsMounted] = useState(false)
   const [answersCount, setAnswersCount] = useState(0)
+  const [answers, setAnswers] = useState(Array(decks[0].cards.length).fill(0))
   const welcomeRef = useRef(null)
   const mainRef = useRef(null)
 
@@ -107,8 +108,8 @@ const App = () => {
         >
           <AnimatedWelcome>
             <Header />
-            <Main decks={decks} answersCount={answersCount} setAnswersCount={setAnswersCount} />
-            <Footer answersCount={answersCount} total={decks[0].cards.length} />
+            <Main decks={decks} answersCount={answersCount} setAnswersCount={setAnswersCount} answers={answers} setAnswers={setAnswers} />
+            <Footer answers={answers} answersCount={answersCount} total={decks[0].cards.length} />
           </AnimatedWelcome>
         </CSSTransition>
       </ViewPort>
