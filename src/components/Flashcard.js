@@ -141,12 +141,33 @@ const Flashcard = (props) => {
         setIsFlipped(true)
     }
 
-    const imgsButton = [
-        "./assets/seta_play.png",
-        "./assets/icone_erro.png",
-        "./assets/icone_quase.png",
-        "./assets/icone_certo.png"
+    const propsButton = [
+        { 
+            name: "Unanswered", 
+            src: "./assets/seta_play.png",
+            alt: "Abrir Pergunta",
+            dataTest: "play-btn"
+        },
+        { 
+            name: "", 
+            src: "./assets/icone_erro.png",
+            alt: "Errou",
+            dataTest: "no-icon"
+        },
+        { 
+            name: "", 
+            src: "./assets/icone_quase.png",
+            alt: "Quase",
+            dataTest: "partial-icon"
+        },
+        { 
+            name: "", 
+            src: "./assets/icone_certo.png",
+            alt: "ZAP!",
+            dataTest: "zap-icon"
+        }
     ]
+    
 
     const handleClickAnswer = (arg) => {
         setAnswer(arg)
@@ -157,18 +178,23 @@ const Flashcard = (props) => {
 
     return (
         !isOpen ?
-            ( <CardClosed>
+            ( <CardClosed data-test="flashcard">
                 <H1 answer={answer}>Pergunta {number + 1}</H1>
-                <Play src={imgsButton[answer]} alt="Abrir pergunta" onClick={!answer ? openQuestion : undefined }></Play>
+                <Play 
+                    src={propsButton[answer].src} 
+                    alt={propsButton[answer].alt} 
+                    data-test={propsButton[answer].dataTest}
+                    onClick={!answer ? openQuestion : undefined }>
+                </Play>
             </CardClosed> )
         :
             !isFlipped ? 
-                ( <CardOpened>
+                ( <CardOpened data-test="flashcard">
                     <Text>{card.question}</Text>
                     <Turn src="./assets/seta_virar.png" onClick={flipCard}></Turn>
                 </CardOpened> )
             :
-                ( <CardOpened>
+                ( <CardOpened data-test="flashcard">
                     <Text>{card.answer}</Text>
                     <Wrong onClick={() => handleClickAnswer(1)}>Não Lembrei</Wrong>
                     <Almost onClick={() => handleClickAnswer(2)}>Quase não lembrei</Almost>
