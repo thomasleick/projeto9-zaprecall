@@ -191,7 +191,7 @@ const Flashcard = (props) => {
             !isFlipped ? 
                 ( <CardOpened data-test="flashcard">
                     <Text data-test="flashcard-text">{card.question}</Text>
-                    <Turn src="./assets/seta_virar.png" onClick={flipCard}></Turn>
+                    <Turn src="./assets/seta_virar.png" onClick={flipCard} data-test="turn-btn"></Turn>
                 </CardOpened> )
             :
                 ( <CardOpened data-test="flashcard">
