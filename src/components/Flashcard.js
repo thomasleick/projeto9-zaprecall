@@ -179,7 +179,7 @@ const Flashcard = (props) => {
     return (
         !isOpen ?
             ( <CardClosed data-test="flashcard">
-                <H1 answer={answer}>Pergunta {number + 1}</H1>
+                <H1 answer={answer} data-test="flashcard-text">Pergunta {number + 1}</H1>
                 <Play 
                     src={propsButton[answer].src} 
                     alt={propsButton[answer].alt} 
@@ -190,12 +190,12 @@ const Flashcard = (props) => {
         :
             !isFlipped ? 
                 ( <CardOpened data-test="flashcard">
-                    <Text>{card.question}</Text>
+                    <Text data-test="flashcard-text">{card.question}</Text>
                     <Turn src="./assets/seta_virar.png" onClick={flipCard}></Turn>
                 </CardOpened> )
             :
                 ( <CardOpened data-test="flashcard">
-                    <Text>{card.answer}</Text>
+                    <Text data-test="flashcard-text">{card.answer}</Text>
                     <Wrong onClick={() => handleClickAnswer(1)}>Não Lembrei</Wrong>
                     <Almost onClick={() => handleClickAnswer(2)}>Quase não lembrei</Almost>
                     <Zap onClick={() => handleClickAnswer(3)}>Zap!</Zap>
