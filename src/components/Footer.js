@@ -25,7 +25,7 @@ const Footer = (props) => {
     const { answersCount, total } = props;
 
     return (
-        <FooterDiv>
+        <FooterDiv data-test="footer">
             <H1>{answersCount}/{total} CONCLUÍDOS</H1>
         </FooterDiv>
     );
