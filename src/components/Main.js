@@ -17,7 +17,7 @@ const Main = (props) => {
     const { decks, answersCount, setAnswersCount, answers, setAnswers, propsButton, finish } = props;
 
     return (
-        <MainDiv finish={finish}>
+        <MainDiv finish={finish} key="main">
         {decks[0].cards.map((card, id) => 
             <Flashcard 
                 key={id} 
@@ -32,6 +32,7 @@ const Main = (props) => {
 
         )}            
         </MainDiv>
+        
     );
 };
 
