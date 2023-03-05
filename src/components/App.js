@@ -40,19 +40,19 @@ const App = () => {
         dataTest: "play-btn"
     },
     { 
-        name: "Wrong", 
+        name: "", 
         src: "./assets/icone_erro.png",
         alt: "Errou",
         dataTest: "no-icon"
     },
     { 
-        name: "Almost", 
+        name: "", 
         src: "./assets/icone_quase.png",
         alt: "Quase",
         dataTest: "partial-icon"
     },
     { 
-        name: "Zap", 
+        name: "", 
         src: "./assets/icone_certo.png",
         alt: "ZAP!",
         dataTest: "zap-icon"
@@ -65,10 +65,8 @@ const App = () => {
   return (
     <AppDiv>
       <ViewPort>
-        {/*<ReactCardFlip isFlipped={isStarted} flipDirection="vertical">*/}
-         { !isStarted ?
+        <ReactCardFlip isFlipped={isStarted} flipDirection="vertical">
           <Welcome setIsStarted={setIsStarted} />
-        :
           <>
             <Header />
             <Main 
@@ -87,8 +85,8 @@ const App = () => {
               propsButton={propsButton} 
               finish={finish}
             />
-          </>}
-        {/*</ReactCardFlip>*/}
+          </>
+        </ReactCardFlip>
       </ViewPort>
     </AppDiv>
     
