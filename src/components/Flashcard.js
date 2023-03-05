@@ -167,18 +167,20 @@ const Flashcard = (props) => {
                 </Play>
             </CardClosed> 
         :
-            <ReactCardFlip isFlipped={flipped} flipDirection="horizontal" >
+            <>{/*<ReactCardFlip isFlipped={flipped} flipDirection="horizontal" >*/}
+                {!flipped?
                 <CardOpened data-test="flashcard">
                     <Text data-test="flashcard-text">{card.question}</Text>
                     <Turn src="./assets/seta_virar.png" onClick={flipCard} data-test="turn-btn"></Turn>
                 </CardOpened>
+                :
                 <CardOpened data-test="flashcard">
                     <Text data-test="flashcard-text">{card.answer}</Text>
                     <Wrong onClick={() => handleClickAnswer(1)} data-test="no-btn">Não Lembrei</Wrong>
                     <Almost onClick={() => handleClickAnswer(2)} data-test="partial-btn">Quase não lembrei</Almost>
                     <Zap onClick={() => handleClickAnswer(3)} data-test="zap-btn">Zap!</Zap>
-                </CardOpened>
-            </ReactCardFlip>
+                </CardOpened>}
+            {/*</ReactCardFlip>*/}</>
         
     );
 };
