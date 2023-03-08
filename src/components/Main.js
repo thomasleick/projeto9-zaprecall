@@ -18,7 +18,7 @@ const Main = (props) => {
 
     return (
         <MainDiv finish={finish} key="main">
-        {decks[0].cards.map((card, id) => 
+        {decks[1].cards.map((card, id) => 
             <Flashcard 
                 key={id} 
                 card={card} 

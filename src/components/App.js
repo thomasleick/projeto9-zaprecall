@@ -81,7 +81,7 @@ const App = () => {
             <Footer 
               answers={answers} 
               answersCount={answersCount} 
-              total={decks[0].cards.length} 
+              total={decks[1].cards.length} 
               propsButton={propsButton} 
               finish={finish}
             />
