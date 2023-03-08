@@ -59,7 +59,7 @@ const App = () => {
     }
   ]
 
-  if ((answersCount === decks[0].cards.length) && !finish)
+  if ((answersCount === decks[1].cards.length) && !finish)
     setFinish(true)
 
   return (
