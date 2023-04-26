@@ -18,7 +18,22 @@ const decks = [
         { question: "Na classificação dos astros na antiguidade o que significa o firmamento?", answer: "É a estrutura que continha as estrelas fixas que giravam ao redor da Terra, de leste e oeste" },
         { question: "Quais eram os astros chamados errantes e explique o motivo do nome", answer: "Lua, Mercúrio, Venus, Sol, Marte, Júppiter e Saturno. Porque não acompanhavam o movimento das estrelas fixas" },
         { question: "Porque temos a sensação de que todos os astros se movem em relação a Terra?", answer: "Porque o nosso sistema de referencia corresponde ao de observadores que se encontram na Terra" },
-        { question: "Para Galileu o movimento é um conceito relativo assim o que podemos afirmar sobre o estado de movimento de uma pessoa sentada em um trem que se desloca entre duas cidades?", answer: "Podemos afirmar que este estado depende do referencial adotado aos olhos da pessoa." }
+        { question: "Para Galileu o movimento é um conceito relativo assim o que podemos afirmar sobre o estado de movimento de uma pessoa sentada em um trem que se desloca entre duas cidades?", answer: "Podemos afirmar que este estado depende do referencial adotado aos olhos da pessoa." },
+        { question: "Proponha uma situação em que um corpo encontra-se em repouso em relação a um referencial em movimento em relação a outro referencial", answer: "Quando voce esta no carro e parece que o Sol está seguindo voce" },
+        { question: "Explique porque a linha do horizonte dificulta a conclusão de que a Terra é esférica", answer: "Porque quando olhamos para o horizonte temos a impressão de que a Terra é plana" },
+        { question: "Explique a contradição entre a concepção do formato plano da Terra e a observação de diferentes constelações a partir de locais distintos do planeta", answer: "Algumas constelações sao visíveis apenas no hemisfério sul e outras no norte e isso nao ocorreria se a Terra fosse plana." },
+        { question: "Como Cristóvão Colombo contribuiu para a discussão sobre o formato da Terra", answer: "Ele argumentou que quando observamos um navio no horizonte vemos primeiro a parte inferior do barco." },
+        { question: "Descreva o experimento realizado por Erastostones para comprovar a esfericidade da Terra", answer: "Erastóstenes utilizou a ideia de que se a Terra fosse plana a sombra em um mastro em Siena e Alexandria seria igual porém elas foram diferentes" },
+        { question: "Em que época viveu Erastóstenes", answer: "276 AC a 194 AC" },
+        { question: "Como Erastostenes conseguiu determinar o comprimento da Terra", answer: "Medindo a sombra de um objeto em duas cidades distintas e verificando a diferença no angulo da sombra e com isso calculou o raio da Terra" },
+        { question: "Qual é o comprimento real aproximado da Terra?", answer: "Aproximadamente 45.000km" },
+        { question: "De que povos os gregos herdaram conhecimento científicos importantes? Em que areas estavam concentrados tais conhecimentos?", answer: "Mesopotamicos e Egípicios. Matemática e Astronomia" },
+        { question: "Quais foram as principais contribuiçoes de Tales de Mileto para a ciencia desenvolvida pelos gregos?", answer: "Geometria na astronomia" },
+        { question: "Que forma geométricas consideraram os pitagóricos para a descrição dos corpos celestes e seus movimentos?", answer: "Esferas e círculos" },
+        { question: "Quais elementos celestes eram conhecidos à época de Pitagoras de Samos", answer: "Terra, Lua, Sol, Mercúrio, Venus, Marte, Jupiter, Saturno e a esfera onde estariam fixas as estrelas" },
+        { question: "Para Aristósteles como estariam dispostos geometricamente os corpos celestes conhecidos?", answer: "Esferas concentricas e transparentes" },
+        { question: "O que o método de poço de Siena nos diz sobre o formato da Terra?", answer: "Que a Terra é esférica porque ele colocou um pedaço de madeira fincado no chão em Siena e em Alexandria no mesmo dia e hora. Em Siena nao tinha sombra, Alexandria sim!" },
+
     ]},
     { name: "Biologia", cards: [
         { question: "O que a genética estuda?", answer: "Estuda os mecanismos de transmissão das características de geração à geração" },
