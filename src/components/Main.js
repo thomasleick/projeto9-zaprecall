@@ -9,7 +9,7 @@ const MainDiv = styled.main`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    overflow: hidden;
+    overflow: scroll;
     border: 0;
 `
 

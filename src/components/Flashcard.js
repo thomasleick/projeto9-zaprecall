@@ -24,8 +24,7 @@ const CardClosed = styled.div`
 const CardOpened = styled.div`
     position: relative;
     width: 270px;
-    min-height: 101px;
-    max-height: 101px;
+    height: 200px;
     resize: none;
     background: #FFFFD4;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
